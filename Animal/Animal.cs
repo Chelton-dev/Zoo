@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Animal
+namespace Animals
 {
     public class Animal
     {
