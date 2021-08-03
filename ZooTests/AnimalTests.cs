@@ -25,5 +25,17 @@ namespace ZooTests
             Assert.Equal("Lion makes a ROAR sound", lion.MakeSound());
             Assert.Equal("Giraffe makes a Chew sound", giraffe.MakeSound());
         }
+
+        [Theory]
+        [InlineData("Lion makes a ROAR sound", "Lion", "ROAR")]
+        [InlineData("Giraffe makes a Chew sound", "Giraffe", "Chew")]
+        [InlineData("Cow makes a Moo sound", "Cow", "Moo")]
+        public void MakeSoundTests(string actual, string name, string sound) {
+            Animal testAnimal = new Animal();
+            testAnimal.Name = name;
+            testAnimal.Sound = sound;
+
+            Assert.Equal(actual, testAnimal.MakeSound());
+        }
     }
 }
